@@ -7,7 +7,6 @@ This is a farming e-commerce web application for the purpose of connecting farme
 - [Key Features](#key-features)
 - [Version](#version)
 - [Assumptions](#assumptions)
-- [Video Tutorial Link](#video-tutorial-link)
 - [Installation and Running of the Application](#installation-and-running-of-the-application)
    + [Requirements to install the project](#requirements-to-install-the-project)
    + [How to install and run the application](#how-to-install-and-run-the-application)
@@ -60,9 +59,6 @@ This is a farming e-commerce web application for the purpose of connecting farme
 - There should not be product images - as this may be misleading for farmers who are looking to purchase certain items, for example, a farmer may find an image of apples on the internet and upload that picture, while the apples that they are selling actually look quite different.
 - Admins can edit products that farmers have listed - in the case where farmers may make mistakes when listing products and they either do not want to or do not know how to edit their products themselves.
 
-## Video Tutorial Link
-
-https://youtu.be/aK6YH4mLXn4 
 
 
 ## Installation and running of the Application
@@ -80,8 +76,8 @@ https://youtu.be/aK6YH4mLXn4
 4. Follow the prompts to download Microsoft Visual Studio.
 5. Once you have Microsoft Visual Studio set up, go to https://github.com/
 6. Sign up or sign into GitHub.
-7. Go to https://github.com/VCDN-2024/prog7311-poe-ST10033475
-8. Copy the following link: https://github.com/VCDN-2024/prog7311-poe-ST10033475 (by pressing ‘CTRL’ and ‘C’ at the same time on your keyboard).
+7. Go to https://github.com/NaiyaHH/Agri-Energy-Connect
+8. Copy the following link: https://github.com/NaiyaHH/Agri-Energy-Connect (by pressing ‘CTRL’ and ‘C’ at the same time on your keyboard).
 9. Go back to Visual Studio, and click on ‘Clone a Repository’.
 10. Paste the link where you are prompted to paste link (by pressing ‘CTRL’ and ‘V’ at the same time on your keyboard).
 11. Press ‘ENTER’ to clone the repository.
@@ -90,9 +86,8 @@ https://youtu.be/aK6YH4mLXn4
 
 ## Login Credentials
 Admin Email Address: admin1@agrienergyconnect.com
+
 Admin Password: poiuytrewq
-Farmer Email Address: yusraadnan25@gmail.com
-Farmer Password: poiuytrewq
 
 ## FAQ
 ### How long does it take for my request to register as a farmer take?
