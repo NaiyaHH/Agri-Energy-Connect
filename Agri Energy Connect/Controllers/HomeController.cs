@@ -18,7 +18,7 @@ namespace Agri_Energy_Connect.Controllers
         public HomeController(Poe2Context context)
             {
                 auth = new FirebaseAuthProvider(
-                                new FirebaseConfig("AIzaSyBNZWtwkluNgLEeaq89Xch9d0cZSomwYec"));
+                                new FirebaseConfig(""));
             _context = context;
             }
 
