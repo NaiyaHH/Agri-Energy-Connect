@@ -1,12 +1,7 @@
+
 # Agri Energy Connect
 This is a farming e-commerce web application for the purpose of connecting farmers, green energy experts, and enthusiasts; allowing farmers to apply to register,  to add an unlimited number of products within the categories provided, and get in touch with other account-holders who advertise products. It is formatted as an ASP.NET MVC (Model-View-Controller) application, written in C# (pronounced “C-Sharp”) and was created using Visual Studio 2022 (which would also be required to run this application) it uses ADO.NET, .NET 8, Entity Framework Core, Firebase Authentication and the database management application used for database creation is SQL Server Management Studio 2019. 
 
-![Screenshot 2024-04-11 210416](https://github.com/VCDN-2024/prog7311-part-2-ST10033475/assets/104624074/469b82e3-bebc-4e18-81b3-eaf21f84f49a)
-•	Assumption
-•	Login credentials
-•	Processes and steps
-•	FAQ
-•	Acknowledgements and references
 
 ## TABLE OF CONTENTS
 - [Key Features](#key-features)
@@ -117,4 +112,3 @@ Bootswatch, 2024. Bootswatch: Free themes for bootstrap, 2024. [Online] Availabl
 Heidi, Erika. 2022. Documentation 101: creating a good README for your software project, 14 December 2022. [Online]. Available at: https://dev.to/erikaheidi/documentation-101-creating-a-good-readme-for-your-software-project-cf8 [Accessed 22 September 2023].
 
 Leshaba, Isaac. 11 June 2023. ASP.NET Core MVC Web app Using Entity Framework. [Online]. Available at: https://drive.google.com/file/d/1JdVWfbfYmFYh5xd7TcG6djbUBRNo_Y3F/view [Accessed 20 June 2023].
-
