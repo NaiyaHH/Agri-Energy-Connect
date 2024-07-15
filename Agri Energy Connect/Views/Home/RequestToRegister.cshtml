@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Pending</title>
+</head>
+<body>
+    <p>Thank you for requesting to register as a Farmer</p>
+
+    
+
+    <p> Your request will be processed by our dedicated employees within a week. Please check back on <p id="date"></p> <p> for an update on your account
+    </p>
+
+    <script>
+        function formatDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            return month + '/' + day + '/' + year;
+        }
+
+        var dateElement = document.getElementById('date');
+        var date = new Date();
+        date.setDate(date.getDate() + 7);
+
+        dateElement.textContent = formatDate(date);
+    </script>
+</body>
+</html>

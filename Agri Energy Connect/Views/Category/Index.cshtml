@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Agri_Energy_Connect.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@{
+    var user = Context.Session.GetString("userRole");
+    if (user.Equals("Admin"))
+    {
+        <p>
+    <a asp-action="Create">Create New</a>
+        </p>
+    }
+    
+    @* This code was adapted from Bootswatch
+    https://bootswatch.com/litera/
+    The following code has been adapted
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Primary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Secondary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-success mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Success card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-danger mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Danger card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-warning mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Warning card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-info mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Info card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-light mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Light card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-dark mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div> *@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 19rem; height: 27rem">
+                <div class="card-body">
+                        <h4 class="card-text">@Html.DisplayFor(modelItem => item.CategoryName)</h4>
+                        <img src="@item.CategoryImg" class="card-img-top" alt="Product Image">
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-action="CategoryProducts" asp-route-id="@item.CategoryId" class="btn btn-secondary">View Products</a>
+                       
+                </div>
+            </div>
+        </div>
+    }
+</div>}
+

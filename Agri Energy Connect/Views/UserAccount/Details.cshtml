@@ -1,0 +1,140 @@
+﻿@using Microsoft.EntityFrameworkCore
+@model Agri_Energy_Connect.Models.UserAccount
+
+@{
+    ViewData["Title"] = "Details";
+}
+@inject Poe2Context _context;
+<p/>
+<h4>User Profile</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Full Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            Email Address
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Role
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserRoleNavigation.UserRole)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.UserId">Edit</a> |
+    <a asp-action="Index">Back</a>
+</div>
+<p/>
+@* This code was adapted from Bootswatch
+    https://bootswatch.com/litera/
+    The following code has been adapted
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Primary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Secondary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-success mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Success card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-danger mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Danger card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-warning mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Warning card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-info mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Info card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-light mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Light card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-dark mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div> *@
+<div class="row">
+    @{ if (Model.UserRole.Equals("Farmer"))
+        {
+        var products = from p in _context.Products
+                       where p.UserId == Model.UserId
+                       select p;
+        products = products
+        .Include(p => p.Category);
+        int num = products.Count();
+            <hr />
+            <h5>Products listed by this farmer</h5>
+            <hr />
+            if(num>0)
+            {
+        @foreach (var item in products)
+    {
+        <div class="col-md-4 mb-3">
+                        <div class="card" style="width: 23rem; height: 30rem;">
+                <div class="card-body">
+                                <h4 class="card-title">@Html.DisplayFor(modelItem => item.ProductName)</h4>
+
+                                <img src="@item.ProductImg" class="card-img-top" height="200" width="70" alt="Product Image">
+
+                                <p class="card-text">R @Html.DisplayFor(modelItem => item.ProductPrice)</p>
+                    <p class="card-text">Production Date: @Html.DisplayFor(modelItem => item.ProdDate)</p>
+                    <p class="card-text">Category Name: @Html.DisplayFor(modelItem => item.Category.CategoryName)</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-secondary">Details</a>
+                </div>
+            </div>
+                    </div>
+                }
+
+            }
+            else
+            {
+                <p>This farmer has not listed any products yet.</p>
+            }
+        }
+        
+    }
+</div>

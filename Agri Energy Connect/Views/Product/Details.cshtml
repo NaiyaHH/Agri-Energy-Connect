@@ -1,0 +1,55 @@
+﻿@model Agri_Energy_Connect.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Product Name 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class = "col-sm-2">
+            Price
+        </dt>
+        <dd class = "col-sm-10">
+            R @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            Production Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProdDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+        <dt class="col-sm-2">
+            Farmer Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User.FullName)
+        </dd>
+    </dl>
+</div>
+@{
+    var user = Context.Session.GetString("userRole");
+    <div>
+        @if (user.Equals("Admin")) {
+            <a asp-action="Edit" asp-route-id="@Model?.ProductId">Edit</a>
+        
+        }
+        |<a asp-controller="UserAccount" asp-action="Details" asp-route-id="@Model?.UserId">View Farmer Details</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+}

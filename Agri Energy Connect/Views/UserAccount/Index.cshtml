@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Agri_Energy_Connect.Models.UserAccount>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Home"asp-action="RegisterAdmin">Add a New Admin</a> |
+    <a asp-controller="UserAccount" asp-action="PendingUsers">View Pending Requests</a>
+</p>
+@* This code was adapted from Bootswatch
+    https://bootswatch.com/litera/
+    The following code has been adapted
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Primary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Secondary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-success mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Success card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-danger mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Danger card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-warning mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Warning card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-info mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Info card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-light mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Light card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+<div class="card border-dark mb-3" style="max-width: 20rem;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div> *@
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 21rem; height: 13rem;">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.FullName)</h4>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Email)</p>
+                    <p class="card-text">Role: @Html.DisplayFor(modelItem => item.UserRoleNavigation.UserRole)</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-secondary">View Details</a>
+                     <a asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-secondary">Change Role</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
